@@ -27,7 +27,19 @@ Our subsetted dataset (places_data.zip 3.63 GB) contains 274948 training images,
 
 To download the data run `make get_data` in your local directory (outside of the container).
 
-### Train
+
+### Start up the GPU container
+
+To build the GPU version of the container: https://hub.docker.com/r/datamachines/jupyter_cto
+
+Run the container using a docker run command, i.e.:
+
+```
+docker run -v `pwd`:/dmc --rm --gpus device=1 -p 8888:8888 datamachines/jupyter_cto:11.3.1_2.8.0_4.5.5-20220318
+```
+
+
+### Train from scratch
 
 The default base model is set to resnet18.
 
@@ -42,6 +54,7 @@ python train_placesCNN.py places_data --num_classes 49
 It will save the best model as `resnet18_best.pth.tar` and the latest model as `resnet18_latest.pth.tar`
 
 
+### Train as a feature extractor
 
 To retrain the network as a feature extractor (a transfer learning method that freezes all the layers except the last layer of the model) use `retrain.py`. This offers a faster training solution, but generally lower accuracy performance. 
 
