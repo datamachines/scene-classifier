@@ -11,7 +11,7 @@ The Places365 dataset (http://places2.csail.mit.edu/) is an image dataset of 365
 
 ## Running the model
 
-To run the trained model on a single image:
+To run the trained model on a single image (from a terminal):
 
 ```
 python run.py <test image> --num_classes 49
