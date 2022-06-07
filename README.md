@@ -35,7 +35,7 @@ To build the GPU version of the container: https://hub.docker.com/r/datamachines
 Run the container using a docker run command, i.e.:
 
 ```
-docker run -v `pwd`:/dmc --rm --gpus device=all -p 8888:8888 datamachines/jupyter_cto:11.3.1_2.8.0_4.5.5-20220318
+docker run -v `pwd`:/dmc --rm --gpus all -p 8888:8888 datamachines/jupyter_cto:11.3.1_2.8.0_4.5.5-20220318
 ```
 
 When this command is run, it will create a link for you to access Jupyter in a browser on your local host. 
